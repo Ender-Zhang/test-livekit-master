@@ -1,0 +1,46 @@
+{
+    "title": "Meeting",
+    "data": [
+      {
+        "title": "Meeting 1",
+        "type": "Meeting",
+        "description": "This is a description of the meeting.",
+        "status": "uncompleted",
+        "date": "2021-09-01"
+      },
+      {
+        "title": "Meeting 2",
+        "type": "Meeting",
+        "description": "This is a description of the meeting.",
+        "status": "uncompleted",
+        "date": "2021-09-05"
+      },
+      {
+        "title": "Meeting 3",
+        "type": "Meeting",
+        "description": "This is a description of the meeting.",
+        "status": "uncompleted",
+        "date": "2021-09-03"
+      },
+      {
+        "title": "Practice 1",
+        "type": "Practice",
+        "description": "This is a description of the parctice.",
+        "status": "uncompleted",
+        "date": "2021-08-01"
+      },
+      {
+        "title": "Practice 2",
+        "type": "Practice",
+        "description": "This is a description of the parctice.",
+        "status": "uncompleted",
+        "date": "2021-09-11"
+      },
+      {
+        "title": "Practice 3",
+        "type": "Practice",
+        "description": "This is a description of the parctice.",
+        "status": "completed",
+        "date": "2021-11-01"
+      }]
+  }
