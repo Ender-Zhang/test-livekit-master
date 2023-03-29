@@ -1,9 +1,10 @@
 import { Button, Text, View } from 'react-native';
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { VStack, Slider, NativeBaseProvider, Box, Stack, HStack, Input, Radio, ScrollView } from 'native-base';
-import DateTimePicker from '@react-native-community/datetimepicker';
+// import DateTimePicker from '@react-native-community/datetimepicker';
+import DatePicker from './DatePicker';
 import surveyData from '../assets/data/survey.json';
 
 function SurveyList() {
@@ -40,21 +41,31 @@ function SurveyList() {
 
           case 'Date':
             // This code will cause time difference between the date selected and the date displayed
-            const [date, setDateValue] = React.useState(new Date());
+            // const [date, setDateValue] = React.useState(new Date());
             
+            const [date, setDate] = useState(new Date());
+
+            const onDateChange = (selectedDate: React.SetStateAction<Date>) => {
+              setDate(selectedDate);
+            };
             inputComponent = (
               // <Input
               //   onChangeText={(date) => handleFormChange(questionKey, date, setDateValue)}
               //   placeholder="MM/DD/YYYY"
               // />
-              <DateTimePicker
-                testID="dateTimePicker"
-                value={date}
-                mode='datetime'
-                is24Hour={true}
-                display="default"
-                onChange={(event, selectedDate) => handleFormChange(questionKey, selectedDate, setDateValue)}
-              />
+            //   <DateTimePicker
+            //     testID="dateTimePicker"
+            //     value={date}
+            //     mode='datetime'
+            //     is24Hour={true}
+            //     display="default"
+            //     // onChange={(event, selectedDate) => handleFormChange(questionKey, selectedDate, setDateValue)}
+            //     onChange={(event, selectedDate) => console.log("1111111111")}
+            //   />
+            <Box>
+            <Text>{date.toLocaleString()}</Text>
+            <DatePicker date={date} onChange={onDateChange} />
+            </Box>
             );
             break;
 
