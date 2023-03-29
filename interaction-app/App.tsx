@@ -3,7 +3,7 @@
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
  * @Date: 2023-03-24 11:09:38
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @LastEditTime: 2023-03-26 19:34:45
+ * @LastEditTime: 2023-03-29 17:35:11
  * @FilePath: \mobile-end\interaction\App.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -26,6 +26,8 @@ import ExcerciseScreen from './screens/ExcercisePage';
 import TestScreen from './screens/Test';
 import VCSScreen from './screens/Connect_VCS';
 import UCEventScreen from './screens/UCEventPage';
+import MainScreen from './screens/MainScreen';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 // type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Home'>;
 
@@ -46,8 +48,9 @@ function HomeScreen({ navigation }: any) {
       }/>
       <Button
         onPress={() => {
-          navigation.navigate('Event_list', {
-          userId: value
+          navigation.navigate('MainScreen', {
+          // navigation.navigate('Event_list', {
+            userId: value
         });
       }}
       >Login</Button>
@@ -57,6 +60,8 @@ function HomeScreen({ navigation }: any) {
 }
 
 const Stack = createNativeStackNavigator();
+// const Tab = createBottomTabNavigator();
+
 
 export default function App() {
   return (
@@ -71,10 +76,18 @@ export default function App() {
         <Stack.Screen name="Exercise" component={ExerciseScreen} />
         <Stack.Screen name="Config" component={ConfigScreen} />
         <Stack.Screen name="ExcercisePage" component={ExcerciseScreen} />
-        <Stack.Screen name="Test" component={TestScreen} />
+        {/* <Stack.Screen name="Test" component={TestScreen} /> */}
         <Stack.Screen name="Connect_VCS" component={VCSScreen} />
         <Stack.Screen name="UCEventPage" component={UCEventScreen} />
+        <Stack.Screen name="MainScreen" component={MainScreen} />
+
+
       </Stack.Navigator>
+      {/* tab
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Settings" component={TestScreen} />
+      </Tab.Navigator> */}
     </NavigationContainer>
   );
 }

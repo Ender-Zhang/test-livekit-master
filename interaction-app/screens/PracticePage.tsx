@@ -2,7 +2,7 @@
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
  * @Date: 2023-03-24 15:59:09
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @LastEditTime: 2023-03-28 00:56:05
+ * @LastEditTime: 2023-03-29 17:15:43
  * @FilePath: \mobile-end\interaction\screens\PracticePage.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -15,7 +15,7 @@ import { View } from 'react-native';
 
 
 function PracticeScreen( {navigation, route}: any) {
-  const task_id = route.params.task_id;
+  const task_id = route.params && route.params.task_id ? route.params.task_id : 0;
   return (
     <NativeBaseProvider>
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>

@@ -14,13 +14,13 @@ function Pressible({task_id, task_date, task_description, type, navigation}: any
         })} rounded="8" overflow="hidden" borderWidth="1" borderColor="coolGray.300" width={"100%"} shadow="3" bg="coolGray.100" p="5">
           <Box >
             <VStack >
-                <Text fontSize={10} color="coolGray.800">
+                <Text color="coolGray.800">
                     Task {task_id}
                 </Text>
-                <Text fontSize={10} color="coolGray.800">
+                <Text color="coolGray.800">
                     Date: {task_date}
                 </Text>
-                <Text fontSize={10} color="coolGray.800">
+                <Text color="coolGray.800">
                     Description: {task_description}
                 </Text>
             </VStack>
