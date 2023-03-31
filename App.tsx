@@ -3,14 +3,14 @@
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
  * @Date: 2023-03-24 11:09:38
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @LastEditTime: 2023-03-29 17:35:11
+ * @LastEditTime: 2023-03-31 13:56:22
  * @FilePath: \mobile-end\interaction\App.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 // In App.js in a new projectasdf
 import * as React from 'react';
 // import { Button, View, Text } from 'react-native';
-import { Button, Text, View, NativeBaseProvider, Input } from 'native-base';
+import { Button, Text, View, NativeBaseProvider, Input, VStack, HStack } from 'native-base';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // import { StackNavigationProp } from '@react-navigation/stack';
@@ -39,13 +39,27 @@ function HomeScreen({ navigation }: any) {
   return (
     <NativeBaseProvider>
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Please Enter the Patient Case ID</Text>
-      <Input mx="3" placeholder="ID" w="100%" onChange={
-        (e) => {
-          // console.log(e.nativeEvent.text);
-          onChangeText(e.nativeEvent.text);
-        }
-      }/>
+        <VStack space={2} alignItems="center">
+          <HStack space={2} alignItems="center">
+            <Text>Patient ID</Text>
+            <Input mx="3" placeholder="ID" w="50%" onChange={
+              (e) => {
+                // console.log(e.nativeEvent.text);
+                onChangeText(e.nativeEvent.text);
+              }
+            } />
+          </HStack>
+          <HStack space={2} alignItems="center">
+            <Text>Password</Text>
+            <Input mx="3" placeholder="ID" w="50%" onChange={
+              (e) => {
+                // console.log(e.nativeEvent.text);
+                onChangeText(e.nativeEvent.text);
+              }
+            } />
+          </HStack>
+        </VStack>
+
       <Button
         onPress={() => {
           navigation.navigate('MainScreen', {
@@ -76,7 +90,7 @@ export default function App() {
         <Stack.Screen name="Exercise" component={ExerciseScreen} />
         <Stack.Screen name="Config" component={ConfigScreen} />
         <Stack.Screen name="ExcercisePage" component={ExcerciseScreen} />
-        {/* <Stack.Screen name="Test" component={TestScreen} /> */}
+        <Stack.Screen name="Test" component={TestScreen} />
         <Stack.Screen name="Connect_VCS" component={VCSScreen} />
         <Stack.Screen name="UCEventPage" component={UCEventScreen} />
         <Stack.Screen name="MainScreen" component={MainScreen} />

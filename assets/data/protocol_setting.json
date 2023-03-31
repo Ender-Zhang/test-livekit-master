@@ -1,0 +1,31 @@
+[{
+    "Internal / External Rotation":{
+        "Device Setup":{
+            "Type":"Text",
+            "Content":["The RED pin goes on the inside of the SSS.",
+                    "The BLACK pin goes on the outside of the SSS.",
+                    "The carriage knob/flag should be locked."]
+        },
+        "Circle Current Settings":{
+            "Type":"Radio",
+            "Content":{
+                "INCLINE":["0","15"],
+                "RED PIN":["0","15","30","45","60"],
+                "BLACK PIN":["0","15","30","45","60"],
+                "USE WAND":["Y","N","AS NEED"]
+            }
+        },
+        "Instructions":{
+            "Type":"Text",
+            "Content":[
+                "Place the RED and BLACKpins into the correct setting.",
+                "Unhook the thin silver wand attached to the arm rest.",
+                "Use your unaffected hand to pull on the wand bringing your affected forearm towards you. Then reverse the motion pushing your forearm away.",
+                "Your unaffected arm should do all of the work.",
+                "Always work through a comfortable ROM. Do not push through sharp pain.",
+                "Do not rotate your body.",
+                "Do not let your affected wrist bend in or out."
+            ]
+        }
+    }
+}]

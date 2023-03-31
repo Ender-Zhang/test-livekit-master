@@ -7,6 +7,7 @@ import surveyData from '../assets/data/protocol.json';
 import TFComponent from '../components/TFComponent';
 import TableComponent from '../components/TableComponent'
 import configData from '../assets/data/exercise_config.json';
+import Portocol_Setting from '../components/Main_ProtococlSetting';
 
 function TestScreen({ route, navigation } : any) {
   
@@ -14,7 +15,7 @@ function TestScreen({ route, navigation } : any) {
   return (
     <NativeBaseProvider>
       <Text>Test</Text>
-
+      <Portocol_Setting />
     </NativeBaseProvider>
 )
 };
