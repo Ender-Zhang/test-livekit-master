@@ -2,7 +2,7 @@
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
  * @Date: 2023-03-24 11:36:37
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @LastEditTime: 2023-03-29 22:39:18
+ * @LastEditTime: 2023-03-31 14:27:20
  * @FilePath: \mobile-end\interaction\screens\EventPage.tsx
  */
 
@@ -16,6 +16,7 @@ import userdata from '../assets/data/user.json';
 import listdata from '../assets/data/list.json';
 import * as FileSystem from 'expo-file-system';
 import ActionSheet from '../components/ActionSheet';
+import Portocol_Setting from '../components/Main_ProtococlSetting'
 
 var id = 0;
 
@@ -50,13 +51,14 @@ function DetailsScreen({ route, navigation } : any) {
           } alt="Alternate Text" size="2xl" />
         </Center>
         {/* show the pressible list */}
-        <View style={{ width: "100%", height: "100%", alignItems: 'center', justifyContent: 'center' }}>
+        {/* <View style={{ width: "100%", height: "100%", alignItems: 'center', justifyContent: 'center' }}>
           <VStack space={2} alignItems="center">
-          {/* <Container> */}
             <Text>Welcome, User: {userId}</Text>
             <Form_item navigation={navigation} status="uncompleted" />
-            {/* </Container> */}
           </VStack>
+        </View> */}
+        <View style={{ width: "100%", height: "100%", alignItems: 'center', justifyContent: 'center' }}>
+          <Portocol_Setting />
         </View>
       </ScrollView>
       <ActionSheet navigation={navigation} id={id} />
