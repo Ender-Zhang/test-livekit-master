@@ -4,8 +4,6 @@ install expo-cli
 
 `npm install -g expo-cli `
 
-`cd interaction-app`
-
 `npm install`
 
-`expo start`
+`expo start` or `npm start`
