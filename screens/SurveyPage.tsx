@@ -2,7 +2,7 @@
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
  * @Date: 2023-03-24 17:30:58
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @LastEditTime: 2023-03-28 10:20:07
+ * @LastEditTime: 2023-04-03 23:16:57
  * @FilePath: \mobile-end\interaction\screens\SurveyPage.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AEo
  */
@@ -42,7 +42,8 @@ function SurveyScreen({ route, navigation } : any) {
         <NativeBaseProvider >
             <Text>Pre-Survey</Text>
             <SurveyList/>
-            <Button onPress={() => navigation.navigate('Protocol',{ task_id:task_id})}>Go_Protocol</Button>
+            {/* <Button onPress={() => navigation.navigate('Protocol',{ task_id:task_id})}>Go_Protocol</Button> */}
+            <Button onPress={() => navigation.navigate('Protocol',{ task_id:"Practice 1"})}>Go_Protocol</Button>
         </NativeBaseProvider>
       );
   }
@@ -52,7 +53,8 @@ function SurveyScreen({ route, navigation } : any) {
         <NativeBaseProvider >
             <Text>Pre-Survey</Text>
             <SurveyList/>
-            <Button onPress={() => navigation.navigate('Connect_VCS',{ task_id:task_id})}>Go_Connect_VCS</Button>
+            {/* <Button onPress={() => navigation.navigate('Connect_VCS',{ task_id:task_id})}>Go_Connect_VCS</Button> */}
+            <Button onPress={() => navigation.navigate('Connect_VCS',{ task_id:"Meeting 1"})}>Go_Connect_VCS</Button>
         </NativeBaseProvider>
       );
   }
@@ -66,7 +68,8 @@ function SurveyScreen({ route, navigation } : any) {
               // listdata[0].data.filter(item => item.title === "Practice 1")[0].status = "completed";
               readJsonFile(task_id);
             // navigation.navigate('Event_list',{
-            navigation.push('Event_list',{
+            // navigation.push('Event_list',{
+            navigation.push('MainScreen',{
           userId: value
         })}}>Go_List</Button>
         </NativeBaseProvider >
