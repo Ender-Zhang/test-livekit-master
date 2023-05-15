@@ -1,0 +1,100 @@
+{
+    "generalProtocolRepair": {
+        "RCR": true,
+        "RCR-Massive": false,
+        "RCR-Collagen": false,
+        "TSA": true,
+        "rTSA": true,
+        "Labral": false,
+        "SLAP": true,
+        "AnteriorCapsule": true,
+        "PosteriorCapsule": true,
+        "Multidirectional": false,
+        "Decompression": false,
+        "CapsularRelease": true,
+        "Subscapularis": false,
+        "Non-Surgical": false,
+        "Other": ""
+    },
+    "StartShoulderSSSPostOpDay": {
+        "1": false,
+        "3": false,
+        "7": true,
+        "14": false,
+        "21": false,
+        "28": false,
+        "42": false
+    },
+    "LengthOfNeedInWeeks": {
+        "3": false,
+        "4": false,
+        "6": true,
+        "8": false,
+        "10": false,
+        "12": false
+    },
+    "Exercise": {
+        "2Sets15Reps2xDaily": {
+            "IRPROM": {
+                "SPWeeks0-3": "30°",
+                "SPWeeks3-6": "45°",
+                "SPWeeks6-12": "60°"
+            },
+            "ERPROM": {
+                "SPWeeks0-3": "15°",
+                "SPWeeks3-6": "30°",
+                "SPWeeks6-12": "45°"
+            },
+            "IRAA-A": {
+                "SPWeeks0-3": "",
+                "SPWeeks3-6": "30°",
+                "SPWeeks6-12": "60°"
+            },
+            "ERA-A": {
+                "SPWeeks0-3": "",
+                "SPWeeks3-6": "15°",
+                "SPWeeks6-12": "30°"
+            },
+            "Pro-traction": {
+                "SPWeeks0-3": "Y",
+                "SPWeeks3-6": "AA-A",
+                "SPWeeks6-12": "Band"
+            },
+            "Re-traction": {
+                "SPWeeks0-3": "Y",
+                "SPWeeks3-6": "Band",
+                "SPWeeks6-12": "Band"
+            },
+            "Isometric IR/ER": {
+                "SPWeeks0-3": "Y",
+                "SPWeeks3-6": "Y",
+                "SPWeeks6-12": "Y"
+            },
+            "IsometricPro/Re": {
+                "SPWeeks0-3": "Y",
+                "SPWeeks3-6": "Y",
+                "SPWeeks6-12": "Y"
+            },
+            "Forward ElevationPROM": {
+                "SPWeeks0-3": "45°",
+                "SPWeeks3-6": "75°",
+                "SPWeeks6-12": "105°"
+            },
+            "Forward ElevationAA-A": {
+                "SPWeeks0-3": "",
+                "SPWeeks3-6": "60°",
+                "SPWeeks6-12": "90°"
+            },
+            "Abduction PROM": {
+                "SPWeeks0-3": "",
+                "SPWeeks3-6": "45°",
+                "SPWeeks6-12": ""
+            },
+            "Abduction AA-A": {
+                "SPWeeks0-3": "",
+                "SPWeeks3-6": "",
+                "SPWeeks6-12": "45°"
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "user": {
+        "id": "123",
+        "name": "Airi Satou",
+        "email": "example@pitt.edu",
+        "phone": "555-555-5555",
+        "physician": "Dr. Smith",
+        "VCS_Devices": "A"
+    }
+}

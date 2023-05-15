@@ -1,0 +1,139 @@
+{
+    "Question1": {
+      "Question": "Feeling After Exercises",
+      "Type": "Text",
+      "Answer": ""
+    },
+    "Question2": {
+      "Question": "Next Telehealth Appt",
+      "Type": "Date",
+      "Answer": ""
+    },
+    "Question3": {
+      "Question": "Current Pain Level",
+      "Type": "Number",
+      "Answer": ""
+    },
+    "Question4": {
+        "Question": "At Worst  Pain Level",
+        "Type": "Number",
+        "Answer": ""
+      },
+    "Question5": {
+      "Question": "Type of Pain",
+      "Type": "Radio",
+      "Options": [
+        "Sharp",
+        "Dull",
+        "Throbbing",
+        "Stinging",
+        "Aching",
+        "Burning",
+        "Numbness or Tingling"
+      ],
+      "Answer": ""
+    },
+    "Question6": {
+      "Question": "Current Pain Medication",
+      "Type": "Text",
+      "Answer": ""
+    },
+    "Question7": {
+      "Question": "Ice or Cold Therapy",
+      "Type": "Radio",
+      "Options": [
+        "Yes",
+        "No"
+      ],
+      "Answer": ""
+    },
+    "Question8": {
+      "Question": "Sling Use",
+      "Type": "Radio",
+      "Options": [
+        "Yes",
+        "No"
+      ],
+      "Answer": ""
+    },
+    "Question9": {
+      "Question": "Quality of Sleep",
+      "Type": "Radio",
+      "Options": [
+        "Very Good",
+        "Good",
+        "Okay",
+        "Bad",
+        "Very Bad"
+      ],
+      "Answer": {
+        "Location": "",
+        "Position": ""
+      }
+    },
+    "Question10": {
+      "Question": "Activities that Have Gotten Easier/Harder",
+      "Type": "Text",
+      "Answer": ""
+    },
+    "Question11": {
+      "Question": "Additional Comments",
+      "Type": "Text",
+      "Answer": ""
+    },
+    "Question12": {
+      "Question": "Recent Illnesses",
+      "Type": "Radio",
+      "Options": [
+        "Yes",
+        "No"
+      ],
+      "Answer": ""
+    },
+    "Question13": {
+      "Question": "Dizzy, Lightheaded, Short of Breath, or Fall Risk",
+      "Type": "Radio",
+      "Options": [
+        "Yes",
+        "No"
+      ],
+      "Answer": ""
+    },
+    "Question14": {
+      "Question": "Smoker",
+      "Type": "Radio",
+      "Options": [
+        "Yes",
+        "No"
+      ],
+      "Answer": ""
+    },
+    "Question15": {
+      "Question": "Eaten Within 2-4 Hours",
+      "Type": "Radio",
+      "Options": [
+        "Yes",
+        "No"
+      ],
+      "Answer": ""
+    },
+    "Question16": {
+      "Question": "If Diabetic, Today's Sugar Readings",
+      "Type": "Text",
+      "Answer": ""
+    },
+    "Question17": {
+      "Question": "Anyone Else Home Today",
+      "Type": "Radio",
+      "Options": [
+        "Yes",
+        "No"
+        ],
+        "Answer": ""
+    },
+    "Question18": {
+      "Question": "Comments",
+      "Type": "Text",
+      "Answer": ""
+    }
+}

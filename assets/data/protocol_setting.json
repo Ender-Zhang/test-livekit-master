@@ -1,0 +1,10 @@
+[{
+    "Internal / External Rotation":{
+        "Device Setup":{
+            "Type":"Text",
+            "Content":["The RED pin goes on the inside of the SSS.",
+                    "The BLACK pin goes on the outside of the SSS.",
+                    "The carriage knob/flag should be locked."]
+        }
+    }
+}]

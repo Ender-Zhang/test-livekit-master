@@ -1,0 +1,59 @@
+{
+  "cli": {
+    "version": ">= 0.60.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "preview_apk_dev": {
+      "developmentClient": true,
+      "android": {
+        "buildType": "apk",
+        "distribution": "internal"
+      },
+      "env": {
+        "ANDROID_SDK_ROOT": "/Users/yfd/Library/Android/sdk"
+      }
+    },
+    "preview_ios_dev": {
+      "distribution": "internal",
+      "developmentClient": true,
+      "ios": {
+        "distribution": "internal",
+        "resourceClass": "m-medium"
+      }
+    },
+    "preview_ios_simulator": {
+      "developmentClient": true,
+      "ios": {
+        "simulator": true,
+        "resourceClass": "m-medium"
+      }
+    },
+    "preview_apk": {
+      "android": {
+        "buildType": "apk",
+        "distribution": "internal"
+      },
+      "env": {
+        "ANDROID_SDK_ROOT": "/Users/yfd/Library/Android/sdk"
+      }
+    },
+    "preview_aab": {
+      "env": {
+        "ANDROID_SDK_ROOT": "/Users/yfd/Library/Android/sdk"
+      }
+    },
+    "production": {
+      "env": {
+        "ANDROID_SDK_ROOT": "/Users/yfd/Library/Android/sdk"
+      },
+      "ios": {
+        "resourceClass": "m-medium"
+      }
+    }
+  },
+  "submit": {
+    "production": {},
+    "preview_ios_dev": {}
+  }
+}
