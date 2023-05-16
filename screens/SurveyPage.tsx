@@ -2,7 +2,7 @@
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
  * @Date: 2023-03-24 17:30:58
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @LastEditTime: 2023-04-25 10:26:42
+ * @LastEditTime: 2023-05-16 08:34:42
  * @FilePath: \mobile-end\interaction\screens\SurveyPage.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AEo
  */
@@ -74,7 +74,9 @@ function SurveyScreen({ route, navigation } : any) {
               <Button onPress={() => navigation.navigate('VideoMeetingPage',{ task_id:task_id, practiceSet:practice})} size="lg" flex={1}>Exercise</Button>
               <Spacer />
             </Flex> */}
-            <SurveyList/>
+            
+            {/* uncomment will cause RNSVGPath not found */}
+            {/* <SurveyList/> */}
 
             {/* <Button onPress={() => navigation.navigate('Protocol',{ task_id:task_id})}>Go_Protocol</Button> */}
             <Flex direction="row" alignItems="center" justifyContent="flex-end">

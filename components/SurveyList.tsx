@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { VStack, Slider, NativeBaseProvider, Box, Stack, HStack, Input, Radio, ScrollView } from 'native-base';
 // import DateTimePicker from '@react-native-community/datetimepicker';
-import DatePicker from './DatePicker';
+// import DatePicker from './DatePicker';
 import surveyData from '../assets/data/survey.json';
 
 function SurveyList() {

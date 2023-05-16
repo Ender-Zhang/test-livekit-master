@@ -1,3 +1,12 @@
+## npm install --legacy-peer-deps
+
+## Build
+
+```
+eas build --profile development --platform android
+```
+
+
 ## Open
 
 npx expo start --dev-client

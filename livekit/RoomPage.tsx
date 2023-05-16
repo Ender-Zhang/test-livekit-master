@@ -24,11 +24,20 @@ import { useRoom, useParticipant, AudioSession } from '@livekit/react-native';
 import type { TrackPublication } from 'livekit-client';
 import { Platform } from 'react-native';
 // @ts-ignore
-import { mediaDevices, ScreenCapturePickerView } from 'react-native-webrtc';
+import { mediaDevices, registerGlobals, ScreenCapturePickerView } from 'react-native-webrtc';
 import { startCallService, stopCallService } from './callservice/CallService';
 import Toast from 'react-native-toast-message';
 
 import 'fastestsmallesttextencoderdecoder';
+
+import { LogLevel, setLogLevel } from 'livekit-client';
+import { setJSExceptionHandler } from 'react-native-exception-handler';
+setJSExceptionHandler((error) => {
+  console.log('error:', error, error.stack);
+}, true);
+
+setLogLevel(LogLevel.debug);
+registerGlobals();
 
 export const RoomPage = ({
   navigation,
@@ -43,7 +52,8 @@ export const RoomPage = ({
       })
   );
   const { participants } = useRoom(room);
-  const { url, token } = route.params;
+  const url = "wss://testyuz.livekit.cloud";
+  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTMyMjQxNjgsImlzcyI6IkFQSTN3R3c0bWE0OXF1diIsIm5iZiI6MTY4NDIyNDE2OCwic3ViIjoiYWRtaW4iLCJ2aWRlbyI6eyJjYW5QdWJsaXNoIjp0cnVlLCJjYW5QdWJsaXNoRGF0YSI6dHJ1ZSwiY2FuU3Vic2NyaWJlIjp0cnVlLCJyb29tIjoiY2xvdWQiLCJyb29tSm9pbiI6dHJ1ZX19.wH9qami1D8N9hnSlaH-sO7afsKe8lV-o1j3a6rt9E6Q";
   const [isCameraFrontFacing, setCameraFrontFacing] = useState(true);
 
   // Perform platform specific call setup.
@@ -68,7 +78,7 @@ export const RoomPage = ({
       // });
       await AudioSession.startAudioSession();
       //TODO test key  change
-      await room.connect(url, 'here test key!', {});
+      await room.connect(url, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTMyMjQxNjgsImlzcyI6IkFQSTN3R3c0bWE0OXF1diIsIm5iZiI6MTY4NDIyNDE2OCwic3ViIjoiYWRtaW4iLCJ2aWRlbyI6eyJjYW5QdWJsaXNoIjp0cnVlLCJjYW5QdWJsaXNoRGF0YSI6dHJ1ZSwiY2FuU3Vic2NyaWJlIjp0cnVlLCJyb29tIjoiY2xvdWQiLCJyb29tSm9pbiI6dHJ1ZX19.wH9qami1D8N9hnSlaH-sO7afsKe8lV-o1j3a6rt9E6Q', {});
       console.log('connected to ', url, ' ', token);
       setIsConnected(true);
     };
@@ -150,8 +160,8 @@ export const RoomPage = ({
   };
 
   return (
-    <View style={styles.container}>
-      {stageView}
+    <View >
+      {/* {stageView} */}
       {otherParticipantsView}
       <RoomControls
         micEnabled={isTrackEnabled(microphonePublication)}
