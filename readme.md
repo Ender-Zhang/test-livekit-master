@@ -1,5 +1,7 @@
 ## npm install --legacy-peer-deps
 
+change token in roompage.tsx
+
 ## Build
 
 ```
