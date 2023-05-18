@@ -2,6 +2,11 @@
 
 change token in roompage.tsx
 
+## Download
+
+🤖 Open this link on your Android devices (or scan the QR code) to install the app:
+https://expo.dev/accounts/ender0613/projects/test-livekit/builds/04330a08-0316-4bb0-8bb9-7842069b028a
+
 ## Build
 
 ```
