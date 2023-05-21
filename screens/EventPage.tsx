@@ -2,7 +2,7 @@
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
  * @Date: 2023-03-24 11:36:37
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @LastEditTime: 2023-04-25 10:53:18
+ * @LastEditTime: 2023-05-19 01:28:45
  * @FilePath: \mobile-end\interaction\screens\EventPage.tsx
  */
 
@@ -19,6 +19,8 @@ import ActionSheet from '../components/ActionSheet';
 import Portocol_Setting from '../components/Main_ProtococlSetting'
 import practicedata from '../assets/data/Practice.json';
 
+
+
 // thd data displayed on the home page is from the list.json file
 var id = 0;
 
@@ -26,6 +28,8 @@ function DetailsScreen({ route, navigation } : any) {
   const { userId } = route.params;
   userdata["user"].id = userId;
   id = userId;
+
+  console.log("DetailScreen");
 
   // write json file to system
   // const [timer, setTimer] = React.useState(0);
@@ -78,6 +82,8 @@ function DetailsScreen({ route, navigation } : any) {
       {/* <ActionSheet navigation={navigation} id={id} /> */}
     </NativeBaseProvider>
   );
+
+
 }
 
 export default DetailsScreen;

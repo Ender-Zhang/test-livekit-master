@@ -54,7 +54,7 @@ export const RoomPage = ({
   const { participants } = useRoom(room);
   const url = "wss://testyuz.livekit.cloud";
   // change token here
-  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTMyMjQxNjgsImlzcyI6IkFQSTN3R3c0bWE0OXF1diIsIm5iZiI6MTY4NDIyNDE2OCwic3ViIjoiYWRtaW4iLCJ2aWRlbyI6eyJjYW5QdWJsaXNoIjp0cnVlLCJjYW5QdWJsaXNoRGF0YSI6dHJ1ZSwiY2FuU3Vic2NyaWJlIjp0cnVlLCJyb29tIjoiY2xvdWQiLCJyb29tSm9pbiI6dHJ1ZX19.wH9qami1D8N9hnSlaH-sO7afsKe8lV-o1j3a6rt9E6Q";
+  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODQ2NzI4NzYsImlzcyI6IkFQSTN3R3c0bWE0OXF1diIsIm5iZiI6MTY4NDY3MTk3Niwic3ViIjoiYWRtaW4iLCJ2aWRlbyI6eyJjYW5QdWJsaXNoIjp0cnVlLCJjYW5QdWJsaXNoRGF0YSI6dHJ1ZSwiY2FuU3Vic2NyaWJlIjp0cnVlLCJyb29tIjoiY2xvdWQiLCJyb29tSm9pbiI6dHJ1ZX19.CurepZhEfQTU_dm-oWCsj5qxRtLj2RGNgsSI9GoCa8A";
   const [isCameraFrontFacing, setCameraFrontFacing] = useState(true);
 
   // Perform platform specific call setup.

@@ -2,7 +2,7 @@
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
  * @Date: 2023-03-31 13:49:34
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @LastEditTime: 2023-05-01 09:43:24
+ * @LastEditTime: 2023-05-21 09:26:34
  * @FilePath: \interaction-app\screens\Excercise_config.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -23,7 +23,7 @@ import { Alert, StyleSheet } from 'react-native';
 import YoutubePlayer from 'react-native-youtube-iframe';
 import {CustomHeader} from '../../components/VideoCofference';
 
-function VM_PracticeRunningPage({ type, route, navigation } : any) {
+function VM_PracticeRunningPage({ navigation, route } : any) {
   const task_id = route.params.task_id;
     const uncompleted = route.params.uncompleted;
     const practiceSet = route.params.practiceSet;
@@ -85,13 +85,13 @@ function VM_PracticeRunningPage({ type, route, navigation } : any) {
       
     return (
         <NativeBaseProvider>
-            <ZStack h={150} alignItems="center" justifyContent="center">
+            {/* <ZStack h={150} alignItems="center" justifyContent="center">
             <Center w="90%" h="150" bg="black" rounded="md" shadow={3} />
             <Text color={"white"}>Video</Text>
-            </ZStack>
+            </ZStack> */}
             <Text fontSize="2xl" bold>{ task_name } Exercise Running</Text>
             
-
+            <ScrollView>
             <YoutubePlayer
               height={220}
               play={playing}
@@ -103,7 +103,7 @@ function VM_PracticeRunningPage({ type, route, navigation } : any) {
                 <Stopwatch />
             </Box>
             <Text fontSize="2xl" bold>Sensor Data</Text>
-            <ScrollView>
+            {/* <ScrollView> */}
             <Box>
             <Text fontSize="xl" bold>ROM Progress Towards</Text>
             <PracticeSlider min={0} max={6} step={0.5} name={"Weeks"}/>
@@ -143,7 +143,8 @@ function VM_PracticeRunningPage({ type, route, navigation } : any) {
             <Button onPress={() => {
                 readJsonFile(task_id);
                 // navigation.navigate('PracticeDetialPage', { task_id: task_id, uncompleted: uncompleted - 1 })}}>Finish Practice</Button>
-                navigation.push('VM_PracticeDetailPage', { task_id: task_id, practiceSet: practiceSet, task_name: task_name })}}>Finish Exercise</Button>
+                // navigation.push('VM_PracticeDetailPage', { task_id: task_id, practiceSet: practiceSet, task_name: task_name })}}>Finish Exercise</Button>
+                navigation.push('VideoMeetingPage', { pageName:"VM_PracticeDetailPage",task_id: task_id, practiceSet: practiceSet, task_name: task_name })}}>Finish Exercise</Button>
         </NativeBaseProvider>
       );
 }

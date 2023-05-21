@@ -2,7 +2,7 @@
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
  * @Date: 2023-05-15 09:35:40
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @LastEditTime: 2023-05-16 02:08:53
+ * @LastEditTime: 2023-05-21 07:56:34
  * @FilePath: \test-livekit-master\App.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -33,6 +33,7 @@ import VM_PracticeDetailScreen from './screens/VirtualVisit/VM_PracticeDetailPag
 import VM_InstructionPage from './screens/VirtualVisit/VM_InstructionPage';
 import VM_PracticeRunningPage from './screens/VirtualVisit/VM_PracticeRunningPage';
 import VM_ConfigScreen from './screens/VirtualVisit/VM_Excercise_config';
+// import MeetingScreen from './VirtualVisit/MeetingPage';
 
 import { registerGlobals } from '@livekit/react-native';
 import { LogLevel, setLogLevel } from 'livekit-client';
@@ -43,8 +44,8 @@ import * as React from 'react';
 import { PreJoinPage } from './livekit/PreJoinPage';
 import { RoomPage } from './livekit/RoomPage';
 
-import {enableScreens} from 'react-native-screens'
-enableScreens()
+// import {enableScreens} from 'react-native-screens'
+// enableScreens()
 
 setJSExceptionHandler((error) => {
   console.log('error:', error, error.stack);
@@ -129,7 +130,7 @@ export default function App() {
 
         <Stack.Screen name="LoadingPage" component={LoadingPage} />
         <Stack.Screen name="VideoMeetingPage" component={VideoMeetingPage} ></Stack.Screen>
-        
+        {/* <Stack.Screen name="Virtual Visit" component={MeetingScreen} ></Stack.Screen> */}
         {/* if I uncomment below code the app will crush, dont know why */}
         <Stack.Screen name="InstructionPage" component={InstructionPage} />
         {/* <Stack.Screen name="PracticeRunningPage" component={PracticeRunningPage} /> */}

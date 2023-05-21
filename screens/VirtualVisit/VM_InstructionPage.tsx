@@ -2,7 +2,7 @@
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
  * @Date: 2023-03-31 13:49:34
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @LastEditTime: 2023-05-09 02:14:41
+ * @LastEditTime: 2023-05-21 09:19:00
  * @FilePath: \interaction-app\screens\Excercise_config.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -20,7 +20,7 @@ import { Alert, StyleSheet } from 'react-native';
 import YoutubePlayer from 'react-native-youtube-iframe';
 import {CustomHeader} from '../../components/VideoCofference';
 
-function VM_InstructionPage({ type, route, navigation } : any) {
+function VM_InstructionPage({ navigation, route } : any) {
   const task_id = route.params.task_id;
   const uncompleted = route.params.uncompleted;
   const practiceSet = route.params.practiceSet;
@@ -83,7 +83,8 @@ function VM_InstructionPage({ type, route, navigation } : any) {
             />
             {/* <Text fontSize="2xl" bold>Auto Populated from SSS setting API</Text> */}
             <Main_ProtococlSetting data={Data} />
-            <Button onPress={() => navigation.navigate('VM_PracticeRunningPage', { task_id: task_id, uncompleted: uncompleted, practiceSet:practiceSet, task_name: task_name })}>Start Exercise</Button>
+            {/* <Button onPress={() => navigation.navigate('VM_PracticeRunningPage', { task_id: task_id, uncompleted: uncompleted, practiceSet:practiceSet, task_name: task_name })}>Start Exercise</Button> */}
+            <Button onPress={() => navigation.navigate('VideoMeetingPage', { pageName:"VM_PracticeRunningPage",task_id: task_id, uncompleted: uncompleted, practiceSet:practiceSet, task_name: task_name })}>Start Exercise</Button>
         </NativeBaseProvider>
       );
 }
