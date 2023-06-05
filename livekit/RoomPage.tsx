@@ -164,7 +164,13 @@ export const RoomPage = ({
   return (
     <View >
       {/* {stageView} */}
-      {otherParticipantsView}
+      <View style={{
+        display: 'flex',
+        justifyContent: 'center',
+        marginLeft: "30%"
+      }}>
+      {otherParticipantsView}</View>
+      
       <RoomControls
         micEnabled={isTrackEnabled(microphonePublication)}
         setMicEnabled={(enabled: boolean) => {
