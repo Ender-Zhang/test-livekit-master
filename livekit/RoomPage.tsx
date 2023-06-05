@@ -86,7 +86,7 @@ export const RoomPage = ({
     };
 
     connect().catch((er) => {
-      console.log('链接失败:')
+      console.log('Link Fail:')
       console.log(er)
     });
     return () => {
