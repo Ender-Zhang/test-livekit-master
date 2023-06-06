@@ -2,7 +2,7 @@
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
  * @Date: 2023-05-15 09:35:40
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @LastEditTime: 2023-05-21 07:56:34
+ * @LastEditTime: 2023-06-06 08:16:25
  * @FilePath: \test-livekit-master\App.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -133,7 +133,7 @@ export default function App() {
         {/* <Stack.Screen name="Virtual Visit" component={MeetingScreen} ></Stack.Screen> */}
         {/* if I uncomment below code the app will crush, dont know why */}
         <Stack.Screen name="InstructionPage" component={InstructionPage} />
-        {/* <Stack.Screen name="PracticeRunningPage" component={PracticeRunningPage} /> */}
+        <Stack.Screen name="PracticeRunningPage" component={PracticeRunningPage} />
         <Stack.Screen name="VM_PracticeDetailPage" component={VM_PracticeDetailScreen} ></Stack.Screen>
         {/* <Stack.Screen name="VM_InstructionPage" component={VM_InstructionPage}></Stack.Screen>
         <Stack.Screen name="VM_PracticeRunningPage" component={VM_PracticeRunningPage}></Stack.Screen>
