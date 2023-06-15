@@ -2,7 +2,7 @@
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
  * @Date: 2023-05-15 09:35:40
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @LastEditTime: 2023-06-06 08:16:25
+ * @LastEditTime: 2023-06-13 10:19:22
  * @FilePath: \test-livekit-master\App.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -63,6 +63,59 @@ registerGlobals();
 
 function HomeScreen({ navigation }: any) {
   const [value, onChangeText] = React.useState('');
+
+  const [userId, setUserId] = React.useState('');
+  const [password, setPassword] = React.useState('');
+
+
+  const handleLogin = () => {
+    var requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    };
+    
+    fetch("http://10.0.2.2:8080/api/patient-cases/2", requestOptions)
+      .then(response => response.json())
+      .then((result) => { console.log(result.patientCasePassword)
+        const pwd = result.patientCasePassword; 
+        if (pwd === password) {
+              // login successfully
+              navigation.navigate('LoadingPage', {
+                userId: value,
+              });}
+      })
+      .catch(error => console.log('error', error));
+
+
+      // const requestOptions = {
+      //   method: 'GET',
+      //   redirect: 'follow'
+      // };
+      
+      // fetch("http://10.0.2.2:8080/api/patient-cases/" + userId, requestOptions)
+      // .then((response) => {
+      //   if (response.ok) {
+      //     return response.json();
+      //   } else {
+      //     throw new Error('Network response was not ok.');
+      //   }
+      // })
+      // .then((result) => {
+      //   console.log("success");
+      //   console.log(result['patientCasePassword']);
+      //   const pwd = result.patientCasePassword;
+      //   console.log("password", pwd);
+      //   if (pwd === password) {
+      //     // login successfully
+      //     navigation.navigate('LoadingPage', {
+      //       userId: value,
+      //     });
+      //   }
+      // })
+      // .catch((error) => console.log('error', error));
+    
+  };
+
   return (
     <NativeBaseProvider>
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -73,6 +126,7 @@ function HomeScreen({ navigation }: any) {
               (e) => {
                 // console.log(e.nativeEvent.text);
                 onChangeText(e.nativeEvent.text);
+                setUserId(e.nativeEvent.text);
               }
             } />
           </HStack>
@@ -82,6 +136,7 @@ function HomeScreen({ navigation }: any) {
               (e) => {
                 // console.log(e.nativeEvent.text);
                 onChangeText(e.nativeEvent.text);
+                setPassword(e.nativeEvent.text);
               }
             } />
           </HStack>
@@ -90,9 +145,10 @@ function HomeScreen({ navigation }: any) {
       <Button
         onPress={() => {
           // navigation.navigate('MainScreen', {
-          navigation.navigate('LoadingPage', {
-            userId: value
-        });
+        //   navigation.navigate('LoadingPage', {
+        //     userId: value
+        // });
+        handleLogin();
       }}
       >Login</Button>
 
