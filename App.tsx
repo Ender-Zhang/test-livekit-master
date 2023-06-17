@@ -77,7 +77,7 @@ function HomeScreen({ navigation }: any) {
     fetch("http://10.0.2.2:8080/api/patient-cases/" + userId, requestOptions)
       .then(response => response.json())
       .then((result) => { 
-        console.log(result);
+        // console.log(result);
         const pwd = result.patientCasePassword; 
         if (pwd === password) {
               // login successfully
