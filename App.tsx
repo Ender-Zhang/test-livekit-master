@@ -2,7 +2,7 @@
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
  * @Date: 2023-05-15 09:35:40
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @LastEditTime: 2023-06-17 11:32:14
+ * @LastEditTime: 2023-06-18 14:57:14
  * @FilePath: \test-livekit-master\App.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -69,56 +69,63 @@ function HomeScreen({ navigation }: any) {
 
 
   const handleLogin = () => {
+    // old version
+    // var requestOptions = {
+    //   method: 'GET',
+    //   redirect: 'follow'
+    // };
+    
+    // fetch("http://10.0.2.2:8080/api/patient-cases/" + userId, requestOptions)
+    //   .then(response => response.json())
+    //   .then((result) => { 
+    //     // console.log(result);
+    //     const pwd = result.patientCasePassword; 
+    //     if (pwd === password) {
+    //           // login successfully
+    //           navigation.navigate('LoadingPage', {
+    //             userId: userId,
+    //           });}
+
+    //     else {
+    //       alert("Wrong password or ID");
+    //     }
+    //   })
+    //   .catch(error => console.log('error', error));
+
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    
+    console.log("userId: " + userId + " password: " + password);
+    var raw = JSON.stringify({
+      "username": parseInt(userId),
+      "password": password
+    });
+    
     var requestOptions = {
-      method: 'GET',
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
       redirect: 'follow'
     };
     
-    fetch("http://10.0.2.2:8080/api/patient-cases/" + userId, requestOptions)
+    fetch("http://10.0.2.2:8080/api/patient-login", requestOptions)
       .then(response => response.json())
       .then((result) => { 
-        // console.log(result);
-        const pwd = result.patientCasePassword; 
-        if (pwd === password) {
-              // login successfully
-              navigation.navigate('LoadingPage', {
-                userId: userId,
-              });}
+        console.log("result:",result);
+        // login successfully
+        navigation.navigate('LoadingPage', {
+          userId: userId,
+        });
 
-        else {
-          alert("Wrong password or ID");
-        }
+        // else {
+        //   alert("Wrong password or ID");
+        // }
       })
-      .catch(error => console.log('error', error));
-
-
-      // const requestOptions = {
-      //   method: 'GET',
-      //   redirect: 'follow'
-      // };
+      .catch(error => {
+        console.log('error', error);
+        alert("Wrong password or ID");
+      });
       
-      // fetch("http://10.0.2.2:8080/api/patient-cases/" + userId, requestOptions)
-      // .then((response) => {
-      //   if (response.ok) {
-      //     return response.json();
-      //   } else {
-      //     throw new Error('Network response was not ok.');
-      //   }
-      // })
-      // .then((result) => {
-      //   console.log("success");
-      //   console.log(result['patientCasePassword']);
-      //   const pwd = result.patientCasePassword;
-      //   console.log("password", pwd);
-      //   if (pwd === password) {
-      //     // login successfully
-      //     navigation.navigate('LoadingPage', {
-      //       userId: value,
-      //     });
-      //   }
-      // })
-      // .catch((error) => console.log('error', error));
-    
   };
 
   return (
