@@ -15,7 +15,7 @@ import TableComponent from '../../components/TableComponent'
 import configData from '../../assets/data/exercise_config.json';
 import Main_ProtococlSetting from '../../components/Main_ProtococlSetting';
 import Data from '../../assets/data/instruction.json';
-import { WebView } from 'react-native-webview';
+// import { WebView } from 'react-native-webview';
 import { Alert, StyleSheet } from 'react-native';
 import YoutubePlayer from 'react-native-youtube-iframe';
 import {CustomHeader} from '../../components/VideoCofference';
