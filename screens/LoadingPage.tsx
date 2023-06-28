@@ -2,7 +2,7 @@
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
  * @Date: 2023-05-15 09:58:06
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @LastEditTime: 2023-06-17 13:46:12
+ * @LastEditTime: 2023-06-27 14:54:06
  * @FilePath: \test-livekit-master\screens\LoadingPage.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -35,7 +35,24 @@ export default function LoadingPage({ route, navigation } : any) {
         .catch(error => console.log('error', error));
     };
 
+    // get user protocol
+    const handoleGetUserProtocol = () => {
+      var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+      };
+      console.log("userId",userId);
+      fetch("http://10.0.2.2:8080/api/sssprotocols/" + userId, requestOptions)
+        .then(response => response.json())
+        .then((result) => { 
+          // console.log("loading result",result);
+          writeUserData4(result);
+        })
+        .catch(error => console.log('error', error));
+    };
+
     handoleGetUserInfo();
+    handoleGetUserProtocol();
 
     if (timer == 0) {
     writeUserData();
@@ -62,6 +79,13 @@ export default function LoadingPage({ route, navigation } : any) {
       FileSystem.writeAsStringAsync(fileUri2, JSON.stringify(userInfo));
       // console.log("userInfo",userInfo);
       console.log("writeUserInfo success");
+    }
+
+    function writeUserData4(userInfo: any) {
+      const fileUri3 = FileSystem.documentDirectory + 'userProtocol.json';
+      FileSystem.writeAsStringAsync(fileUri3, JSON.stringify(userInfo));
+      // console.log("userInfo",userInfo);
+      console.log("writeUserProtocol success");
     }
 
     // auto jump to main page

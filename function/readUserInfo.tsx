@@ -2,7 +2,7 @@
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
  * @Date: 2023-04-16 13:16:17
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @LastEditTime: 2023-06-17 15:46:45
+ * @LastEditTime: 2023-06-27 15:46:32
  * @FilePath: \interaction-app\function\readFile.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -36,9 +36,10 @@ export default function readUserInfo(filename: string){
             }
           })
           .then(fileContent => {
+            // console.log("fileContent: ",fileContent);
             const jsonData = JSON.parse(fileContent!);
             // setMyData(jsonData);
-            console.log("readUserInfo success");
+            // console.log("readUserInfo success");
             // console.log("jsonData: ",jsonData)
             return jsonData;
           })

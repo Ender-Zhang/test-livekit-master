@@ -2,7 +2,7 @@
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
  * @Date: 2023-03-31 13:49:34
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @LastEditTime: 2023-06-18 14:58:10
+ * @LastEditTime: 2023-06-27 14:59:00
  * @FilePath: \interaction-app\screens\MainScreen.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -30,10 +30,9 @@ export default function MainScreen({ route, navigation } : any) {
   }, [navigation]);
 
   const userInfo = readUserInfo('userInfo.json');
-  console.log("userInfo1111",userInfo);
+  // console.log("userInfo1111",userInfo);
   // console.log("name",userInfo);
   
-  // Below is for the tab, but somehow it doesn't work
   return (
     <View style={{flex: 1}} collapsable={false}>
     <Tab.Navigator
