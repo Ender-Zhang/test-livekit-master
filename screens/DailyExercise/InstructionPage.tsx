@@ -2,7 +2,7 @@
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
  * @Date: 2023-03-31 13:49:34
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @LastEditTime: 2023-04-25 11:00:12
+ * @LastEditTime: 2023-06-27 23:34:08
  * @FilePath: \interaction-app\screens\Excercise_config.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -13,7 +13,7 @@ import { Text, ScrollView, NativeBaseProvider, Box, View, Button, Center, ZStack
 import TFComponent from '../../components/TFComponent';
 import TableComponent from '../../components/TableComponent'
 import configData from '../../assets/data/exercise_config.json';
-import Main_ProtococlSetting from '../../components/Main_ProtococlSetting';
+import Main_ProtococlSetting from '../../components/InstructionSetting';
 import Data from '../../assets/data/instruction.json';
 // import { WebView } from 'react-native-webview';
 import { Alert, StyleSheet } from 'react-native';
