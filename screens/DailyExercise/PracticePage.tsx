@@ -2,7 +2,7 @@
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
  * @Date: 2023-03-28 12:56:09
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @LastEditTime: 2023-04-25 10:59:24
+ * @LastEditTime: 2023-07-03 16:59:54
  * @FilePath: \interaction-app\interaction-app\screens\PracticePage.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -23,6 +23,7 @@ import { View } from 'react-native';
 import { Form_item } from '../../components/Form_item';
 import readFile from '../../function/readFile';
 import { Dimensions } from 'react-native';
+import readUserInfo from '../../function/readUserInfo';
 
 function PracticeScreen( {navigation, route}: any) {
   const task_id = route.params && route.params.task_id ? route.params.task_id : 0;
@@ -30,7 +31,12 @@ function PracticeScreen( {navigation, route}: any) {
   const uncompletedCount = myData1.data.filter((item: { status: string; }) => item.status == 'uncompleted').length;
   const completedSet1 = myData1.data.filter(item => item.set === "1").every(item => item.status === "completed");
   const completedSet2 = myData1.data.filter(item => item.set === "2").every(item => item.status === "completed");
-  
+  let setNum = 0;
+  const userSetting = readUserInfo('userSetting.json')
+  if (userSetting){
+    setNum = parseInt(userSetting["setsRepsIrErAaa"]["setsXReps"].split("x")[0]);
+  console.log("SetNum: ", setNum);
+  }
   // console.log("This is completedSet1:", completedSet1);
   // console.log("This is completedSet2:", completedSet2);
 
@@ -90,7 +96,7 @@ function PracticeScreen( {navigation, route}: any) {
   console.log("This is completedSet1:", completedSet1);
   console.log("This is completedSet2:", completedSet2);
   console.log(completedSet1 && !completedSet2);
-  if (completedSet1 && !completedSet2){
+  if (completedSet1 && !completedSet2 && setNum === 2){
   component2 = (
       //       <Box w="80%" h ="15%">
       //   <Button size="full" justifyContent="center" alignItems="center" onPress={() => navigation.navigate('Survey', { type:"pre", practiceSet:"2"})}>
@@ -111,7 +117,7 @@ function PracticeScreen( {navigation, route}: any) {
   )
   }
 
-  else if (completedSet1 && completedSet2){
+  else if (completedSet1 && completedSet2 && setNum === 2){
     component2 = (
     //   <Box w="80%" h ="15%">
     //   <Button size="full" justifyContent="center" alignItems="center">
@@ -133,7 +139,7 @@ function PracticeScreen( {navigation, route}: any) {
     )
   }
 
-  else if (!completedSet1 && !completedSet2) {
+  else if (!completedSet1 && !completedSet2 && setNum === 2) {
     component2 = (
       <Box>
         {/* <Button size="full" justifyContent="center" alignItems="center" >

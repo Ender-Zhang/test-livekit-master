@@ -2,7 +2,7 @@
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
  * @Date: 2023-03-28 12:56:09
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @LastEditTime: 2023-04-25 10:59:24
+ * @LastEditTime: 2023-07-03 16:33:05
  * @FilePath: \interaction-app\interaction-app\screens\PracticePage.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -22,6 +22,7 @@ import { VStack, Center, NativeBaseProvider, Button, Text, Pressable, Box, Flex,
 import { View } from 'react-native';
 import { Form_item } from '../../components/Form_item';
 import readFile from '../../function/readFile';
+import readUserInfo from '../../function/readUserInfo';
 import { Dimensions } from 'react-native';
 
 function PracticeScreen( {navigation, route}: any) {
@@ -31,6 +32,8 @@ function PracticeScreen( {navigation, route}: any) {
   const completedSet1 = myData1.data.filter(item => item.set === "1").every(item => item.status === "completed");
   const completedSet2 = myData1.data.filter(item => item.set === "2").every(item => item.status === "completed");
   
+  const setNum = readUserInfo('userSetting.json').sp_week;
+  console.log("SetNum: ", setNum);
   // console.log("This is completedSet1:", completedSet1);
   // console.log("This is completedSet2:", completedSet2);
 

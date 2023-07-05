@@ -2,7 +2,7 @@
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
  * @Date: 2023-05-15 09:58:06
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @LastEditTime: 2023-06-27 14:54:06
+ * @LastEditTime: 2023-07-03 16:02:13
  * @FilePath: \test-livekit-master\screens\LoadingPage.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -12,6 +12,7 @@ import * as FileSystem from 'expo-file-system';
 import Portocol_Setting from '../components/Main_ProtococlSetting'
 import practicedata from '../assets/data/Practice.json';
 import listdata from '../assets/data/list.json';
+import settingData from '../assets/data/SSSSSeting.json';
 
 export default function LoadingPage({ route, navigation } : any) {
     const { userId } = route.params;
@@ -57,6 +58,7 @@ export default function LoadingPage({ route, navigation } : any) {
     if (timer == 0) {
     writeUserData();
     writeUserData2();
+    writeUserData5();
     setTimer(1);
     }
   
@@ -86,6 +88,13 @@ export default function LoadingPage({ route, navigation } : any) {
       FileSystem.writeAsStringAsync(fileUri3, JSON.stringify(userInfo));
       // console.log("userInfo",userInfo);
       console.log("writeUserProtocol success");
+    }
+
+    function writeUserData5() {
+      const fileUri4 = FileSystem.documentDirectory + 'userSetting.json';
+      FileSystem.writeAsStringAsync(fileUri4, JSON.stringify(settingData));
+      // console.log("userInfo",userInfo);
+      console.log("writeUserSetting success");
     }
 
     // auto jump to main page

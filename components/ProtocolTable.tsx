@@ -2,7 +2,7 @@
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
  * @Date: 2023-06-24 09:12:03
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @LastEditTime: 2023-06-27 16:14:00
+ * @LastEditTime: 2023-07-04 21:14:53
  * @FilePath: \test-livekit-master\components\ProtocolTable.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -50,12 +50,12 @@ function ProtocolTable() {
     return (
 
         <NativeBaseProvider>
-            <Text alignSelf="center" fontSize="lg">Exercise protocol</Text>
-            <ScrollView>
+            <Text alignSelf="center" fontSize="2xl" bold>Exercise protocol</Text>
+            {/* <ScrollView> */}
                 <VStack space={4} alignItems="center">
-                    <Text>General Protocol Repair: {userProtocol.repair}</Text>
-                    <Text>StartShoulderSSSPostOpDay: {userProtocol.startShoulderSssPostOpDay}</Text>
-                    <Text>LengthOfNeedInWeeks: {userProtocol.lengthOfNeedInWeeks}</Text>
+                    <Text fontSize="xl">General Protocol Repair: {userProtocol.repair}</Text>
+                    <Text fontSize="xl">StartShoulderSSSPostOpDay: {userProtocol.startShoulderSssPostOpDay}</Text>
+                    <Text fontSize="xl">LengthOfNeedInWeeks: {userProtocol.lengthOfNeedInWeeks}</Text>
                     {/* <TFComponent title="General Protocol Repair: " generalProtocolRepair={data1.repair} /> */}
                     {/* <TFComponent title="StartShoulderSSSPostOpDay: " generalProtocolRepair={surveyData.StartShoulderSSSPostOpDay} /> */}
                     {/* <TFComponent title="LengthOfNeedInWeeks: " generalProtocolRepair={surveyData.LengthOfNeedInWeeks} /> */}
@@ -70,7 +70,7 @@ function ProtocolTable() {
 
 
                 </VStack>
-            </ScrollView>
+            {/* </ScrollView> */}
         </NativeBaseProvider>
     );
 }

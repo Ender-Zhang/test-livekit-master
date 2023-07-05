@@ -2,7 +2,7 @@
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
  * @Date: 2023-03-31 13:49:34
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @LastEditTime: 2023-04-25 19:11:31
+ * @LastEditTime: 2023-07-04 20:29:09
  * @FilePath: \interaction-app\screens\Excercise_config.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -21,6 +21,7 @@ import * as FileSystem from 'expo-file-system';
 import PracticeSlider from '../../components/PracticeSlider';
 import { Alert, StyleSheet } from 'react-native';
 import YoutubePlayer from 'react-native-youtube-iframe';
+import readUserInfo from '../../function/readUserInfo';
 
 function PracticeRunningPage({ type, route, navigation } : any) {
   const task_id = route.params.task_id;
@@ -28,6 +29,13 @@ function PracticeRunningPage({ type, route, navigation } : any) {
     const practiceSet = route.params.practiceSet;
     const task_name = route.params.task_name;
 
+
+    let repNum = 0;
+    const userSetting = readUserInfo('userSetting.json')
+    if (userSetting){
+      repNum = parseInt(userSetting["setsRepsIrErAaa"]["setsXReps"].split("x")[1]);
+    // console.log("repNum: ", repNum);
+    }
     useLayoutEffect(() => {
       navigation.setOptions({ title: 'Exercise Running' });
     }, [navigation]);
@@ -95,11 +103,12 @@ function PracticeRunningPage({ type, route, navigation } : any) {
               videoId={videoId}
               onChangeState={onStateChange}
             />
-            
+
             <Box>
                 <Stopwatch />
             </Box>
-            <Text fontSize="2xl" bold>Sensor Data</Text>
+            <Text fontSize="xl" bold>This exercise need to repeat {repNum} times.</Text>
+            <Text fontSize="xl" bold>Sensor Data</Text>
             <ScrollView>
             <Box>
             <Text fontSize="xl" bold>ROM Progress Towards</Text>
