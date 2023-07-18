@@ -1,11 +1,10 @@
 {
   "name": "test-livekit",
   "version": "1.0.0",
-  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "start": "expo start --dev-client",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "web": "expo start --web"
   },
   "dependencies": {
@@ -19,14 +18,14 @@
     "@react-navigation/stack": "^6.3.16",
     "@voximplant/react-native-foreground-service": "^3.0.1",
     "deprecated-react-native-prop-types": "^4.1.0",
-    "expo": "~48.0.9",
+    "expo": "~48.0.18",
     "expo-dev-client": "~2.2.1",
     "expo-status-bar": "~1.4.4",
     "fastestsmallesttextencoderdecoder": "^1.0.22",
     "native-base": "^3.4.28",
     "react": "18.2.0",
     "react-dom": "^18.2.0",
-    "react-native": "0.71.7",
+    "react-native": "0.71.8",
     "react-native-dialog": "^9.3.0",
     "react-native-exception-handler": "^2.10.10",
     "react-native-safe-area-context": "~3.0.7",
@@ -37,7 +36,8 @@
     "react-native-web": "~0.18.10",
     "react-native-webrtc": "^111.0.0",
     "react-native-webview": "^11.26.0",
-    "react-native-youtube-iframe": "^2.2.2"
+    "react-native-youtube-iframe": "^2.2.2",
+    "expo-splash-screen": "~0.18.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
