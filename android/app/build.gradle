@@ -113,7 +113,7 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.testlivekit"
+    namespace 'com.yfdev.testlivekit'
     defaultConfig {
         applicationId 'com.yfdev.testlivekit'
         minSdkVersion rootProject.ext.minSdkVersion
