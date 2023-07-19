@@ -31,6 +31,7 @@ function PracticeScreen( {navigation, route}: any) {
   const uncompletedCount = myData1.data.filter((item: { status: string; }) => item.status == 'uncompleted').length;
   const completedSet1 = myData1.data.filter(item => item.set === "1").every(item => item.status === "completed");
   const completedSet2 = myData1.data.filter(item => item.set === "2").every(item => item.status === "completed");
+  
   let setNum = 0;
   const userSetting = readUserInfo('userSetting.json')
   if (userSetting){

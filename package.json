@@ -18,8 +18,10 @@
     "@react-navigation/stack": "^6.3.16",
     "@voximplant/react-native-foreground-service": "^3.0.1",
     "deprecated-react-native-prop-types": "^4.1.0",
-    "expo": "~48.0.18",
+    "expo": "^49.0.3",
     "expo-dev-client": "~2.2.1",
+    "expo-modules-autolinking": "^1.5.0",
+    "expo-splash-screen": "~0.18.2",
     "expo-status-bar": "~1.4.4",
     "fastestsmallesttextencoderdecoder": "^1.0.22",
     "native-base": "^3.4.28",
@@ -36,8 +38,7 @@
     "react-native-web": "~0.18.10",
     "react-native-webrtc": "^111.0.0",
     "react-native-webview": "^11.26.0",
-    "react-native-youtube-iframe": "^2.2.2",
-    "expo-splash-screen": "~0.18.2"
+    "react-native-youtube-iframe": "^2.2.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

@@ -1,4 +1,4 @@
-package com.yfdev.testlivekit;
+package com.testlivekit;
 
 import android.os.Build;
 import android.os.Bundle;

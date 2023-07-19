@@ -113,13 +113,13 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace 'com.yfdev.testlivekit'
+    namespace "com.testlivekit"
     defaultConfig {
-        applicationId 'com.yfdev.testlivekit'
+        applicationId "com.testlivekit"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
-        versionName "1.0.0"
+        versionName "1.0"
     }
 
     splits {
