@@ -29,6 +29,8 @@ import { startCallService, stopCallService } from './callservice/CallService';
 import Toast from 'react-native-toast-message';
 
 import 'fastestsmallesttextencoderdecoder';
+import Livekit_token from '../assets/data/livekit_token.json';
+
 
 import { LogLevel, setLogLevel } from 'livekit-client';
 import { setJSExceptionHandler } from 'react-native-exception-handler';
@@ -42,7 +44,8 @@ registerGlobals();
 export const RoomPage = ({
   navigation,
   route,
-}: NativeStackScreenProps<RootStackParamList, 'RoomPage'>) => {
+  token
+}: NativeStackScreenProps<RootStackParamList, 'RoomPage'> & {token:any}) => {
   const [, setIsConnected] = useState(false);
   const [room] = useState(
     () =>
@@ -53,8 +56,13 @@ export const RoomPage = ({
   );
   const { participants } = useRoom(room);
   const url = "wss://testyuz.livekit.cloud";
+  
   // change token here
-  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODQ2NzI4NzYsImlzcyI6IkFQSTN3R3c0bWE0OXF1diIsIm5iZiI6MTY4NDY3MTk3Niwic3ViIjoiYWRtaW4iLCJ2aWRlbyI6eyJjYW5QdWJsaXNoIjp0cnVlLCJjYW5QdWJsaXNoRGF0YSI6dHJ1ZSwiY2FuU3Vic2NyaWJlIjp0cnVlLCJyb29tIjoiY2xvdWQiLCJyb29tSm9pbiI6dHJ1ZX19.CurepZhEfQTU_dm-oWCsj5qxRtLj2RGNgsSI9GoCa8A";
+  // const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODQ2NzI4NzYsImlzcyI6IkFQSTN3R3c0bWE0OXF1diIsIm5iZiI6MTY4NDY3MTk3Niwic3ViIjoiYWRtaW4iLCJ2aWRlbyI6eyJjYW5QdWJsaXNoIjp0cnVlLCJjYW5QdWJsaXNoRGF0YSI6dHJ1ZSwiY2FuU3Vic2NyaWJlIjp0cnVlLCJyb29tIjoiY2xvdWQiLCJyb29tSm9pbiI6dHJ1ZX19.CurepZhEfQTU_dm-oWCsj5qxRtLj2RGNgsSI9GoCa8A";
+  // const token = Livekit_token.token;
+  // const token = token1.token;
+
+
   const [isCameraFrontFacing, setCameraFrontFacing] = useState(true);
 
   // Perform platform specific call setup.

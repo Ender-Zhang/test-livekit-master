@@ -2,7 +2,7 @@
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
  * @Date: 2023-04-07 13:43:17
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @LastEditTime: 2023-05-09 02:21:41
+ * @LastEditTime: 2023-07-25 14:00:02
  * @FilePath: \interaction-app\screens\PracticeDetialPage.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -116,7 +116,7 @@ function VM_PracticeDetailScreen({ navigation, route }: any) {
         // </NativeBaseProvider>
         <NativeBaseProvider>
             {/* <CustomHeader /> */}
-            <Flex direction="column" height="80%">
+            <Flex direction="column" height="100%">
 
                 <Flex flexGrow={1}>
 

@@ -2,7 +2,7 @@
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
  * @Date: 2023-05-15 09:35:40
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @LastEditTime: 2023-06-21 20:18:37
+ * @LastEditTime: 2023-07-25 13:50:31
  * @FilePath: \test-livekit-master\App.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -157,10 +157,10 @@ function HomeScreen({ navigation }: any) {
       <Button
         onPress={() => {
           // navigation.navigate('MainScreen', {
-        //   navigation.navigate('LoadingPage', {
-        //     userId: value
-        // });
-        handleLogin();
+          navigation.navigate('LoadingPage', {
+            userId: value
+        });
+        // handleLogin();
       }}
       >Login</Button>
 
