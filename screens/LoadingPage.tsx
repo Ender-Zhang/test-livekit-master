@@ -2,7 +2,7 @@
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
  * @Date: 2023-05-15 09:58:06
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @LastEditTime: 2023-07-25 20:58:39
+ * @LastEditTime: 2023-07-27 11:12:33
  * @FilePath: \test-livekit-master\screens\LoadingPage.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -21,36 +21,38 @@ export default function LoadingPage({ route, navigation } : any) {
 
 
     // get user info
-    //   const handoleGetUserInfo = () => {
-    //   var requestOptions = {
-    //     method: 'GET',
-    //     redirect: 'follow'
-    //   };
-    //   console.log("userId",userId);
-    //   fetch("http://10.0.2.2:8080/api/patient-cases/" + userId, requestOptions)
-    //     .then(response => response.json())
-    //     .then((result) => { 
-    //       // console.log("loading result",result);
-    //       writeUserData3(result);
-    //     })
-    //     .catch(error => console.log('error', error));
-    // };
+      const handoleGetUserInfo = () => {
+      var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+      };
+      console.log("userId",userId);
+      // fetch("http://10.0.2.2:8080/api/patient-cases/" + userId, requestOptions)
+      fetch("http://192.168.1.102:8080/interaction/dev/api/patient-cases/" + userId, requestOptions)
+        .then(response => response.json())
+        .then((result) => { 
+          // console.log("loading result",result);
+          writeUserData3(result);
+        })
+        .catch(error => console.log('errorUserInfo', error));
+    };
 
     // get user protocol
-    // const handoleGetUserProtocol = () => {
-    //   var requestOptions = {
-    //     method: 'GET',
-    //     redirect: 'follow'
-    //   };
-    //   console.log("userId",userId);
-    //   fetch("http://10.0.2.2:8080/api/sssprotocols/" + userId, requestOptions)
-    //     .then(response => response.json())
-    //     .then((result) => { 
-    //       // console.log("loading result",result);
-    //       writeUserData4(result);
-    //     })
-    //     .catch(error => console.log('error', error));
-    // };
+    const handoleGetUserProtocol = () => {
+      var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+      };
+      // console.log("userId",userId);
+      // fetch("http://10.0.2.2:8080/interaction/dev/api/sssprotocols/" + userId, requestOptions)
+      fetch("http://192.168.1.102:8080/interaction/dev/api/sssprotocols/" + userId, requestOptions)
+        .then(response => response.json())
+        .then((result) => { 
+          console.log("loading result Protocol",result);
+          writeUserData4(result);
+        })
+        .catch(error => console.log('errorProtocol', error));
+    };
 
     // get livekit token
     const handoleGetLivekitToken = () => {
@@ -60,16 +62,16 @@ export default function LoadingPage({ route, navigation } : any) {
         redirect: 'follow'
       };
       
-      // fetch("http://10.0.2.2:8080/api/generate-token", requestOptions)
-      fetch("http://192.168.1.101:8080/api/generate-token", requestOptions)
+      // fetch("http://10.0.2.2:8080/interaction/dev/api/generate-token", requestOptions)
+      fetch("http://192.168.1.102:8080/interaction/dev/api/generate-token", requestOptions)
         .then(response => response.text())
         .then(result => writeUserData6(result))
         .catch(error => console.log('error for token:', error));
     }
     
 
-    // handoleGetUserInfo();
-    // handoleGetUserProtocol();
+    handoleGetUserInfo();
+    handoleGetUserProtocol();
     handoleGetLivekitToken();
 
     if (timer == 0) {
