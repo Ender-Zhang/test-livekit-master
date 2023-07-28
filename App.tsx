@@ -2,7 +2,7 @@
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
  * @Date: 2023-05-15 09:35:40
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @LastEditTime: 2023-07-27 10:57:55
+ * @LastEditTime: 2023-07-28 09:17:56
  * @FilePath: \test-livekit-master\App.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -19,7 +19,7 @@ import ProtocolScreen from './screens/DailyExercise/ProtocolPage';
 import ExerciseScreen from './screens/DailyExercise/ExcercisePage';
 import ConfigScreen from './screens/DailyExercise/Excercise_config';
 import ExcerciseScreen from './screens/DailyExercise/ExcercisePage';
-// import TestScreen from './screens/Test';
+import TestScreen from './screens/Test';
 // import VCSScreen from './screens/Connect_VCS';
 import UCEventScreen from './screens/UCEventPage';
 import MainScreen from './screens/MainScreen';
@@ -96,6 +96,10 @@ function HomeScreen({ navigation }: any) {
     myHeaders.append("Content-Type", "application/json");
     
     console.log("userId: " + userId + " password: " + password);
+    if (userId == '' || password == '' || userId == null || password == null) {
+      alert("Please enter your ID and password");
+      return;
+    }
     var raw = JSON.stringify({
       "username": parseInt(userId),
       "password": password
@@ -109,7 +113,7 @@ function HomeScreen({ navigation }: any) {
     };
     
     // fetch("http://10.0.2.2:8080/interaction/dev/api/patient-login", requestOptions)
-    fetch("http://192.168.1.101:8080/interaction/dev/api/patient-login", requestOptions)
+    fetch("http://192.168.1.102:8080/interaction/dev/api/patient-login", requestOptions)
       .then(response => response.json())
       .then((result) => { 
         // console.log("result:",result);
@@ -158,10 +162,11 @@ function HomeScreen({ navigation }: any) {
       <Button
         onPress={() => {
           // navigation.navigate('MainScreen', {
-          navigation.navigate('LoadingPage', {
-            userId: value
-        });
-        // handleLogin();
+          // navigation.navigate('LoadingPage', {
+            // navigation.navigate('Test', {
+            // userId: value
+        // });
+        handleLogin();
       }}
       >Login</Button>
 
@@ -191,7 +196,7 @@ export default function App() {
         <Stack.Screen name="Exercise" component={ExerciseScreen} />
         <Stack.Screen name="Config" component={ConfigScreen} />
         <Stack.Screen name="ExcercisePage" component={ExcerciseScreen} />
-        {/* <Stack.Screen name="Test" component={TestScreen} /> */}
+        <Stack.Screen name="Test" component={TestScreen} />
         {/* <Stack.Screen name="Connect_VCS" component={VCSScreen} /> */}
         <Stack.Screen name="UCEventPage" component={UCEventScreen} />
         <Stack.Screen name="MainScreen" component={MainScreen} />
