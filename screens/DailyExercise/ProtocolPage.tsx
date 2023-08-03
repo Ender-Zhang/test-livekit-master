@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Text, ScrollView, NativeBaseProvider, Box, View, Button, VStack } from 'native-base';
-import TFComponent from '../components/TFComponent';
-import TableComponent from '../components/TableComponent'
-import surveyData from '../assets/data/protocol.json';
+import TFComponent from '../../components/TFComponent';
+import TableComponent from '../../components/TableComponent'
+import surveyData from '../../assets/data/protocol.json';
 
 
 function ProtocolScreen({ type, route, navigation } : any) {

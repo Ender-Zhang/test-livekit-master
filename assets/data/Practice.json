@@ -1,0 +1,220 @@
+{
+    "title": "Meeting",
+    "data": [
+      {
+        "title": "Exercise 1",
+        "name": "Internal / External Rotation",
+        "type": "Practice",
+        "description": "This is a description of the parctice.",
+        "status": "uncompleted",
+        "date": "2021-08-01",
+        "set":"1"
+      },
+      {
+        "title": "Practice 2",
+        "name": "Protraction / retraction",
+        "type": "Practice",
+        "description": "This is a description of the parctice.",
+        "status": "uncompleted",
+        "date": "2021-09-11",
+        "set":"1"
+      },
+      {
+        "title": "Practice 3",
+        "name": "Isometric",
+        "type": "Practice",
+        "description": "This is a description of the parctice.",
+        "status": "uncompleted",
+        "date": "2021-11-01",
+        "set":"1"
+      },
+      {
+        "title": "Practice 4",
+        "name": "ER AA-A",
+        "type": "Practice",
+        "description": "This is a description of the parctice.",
+        "status": "uncompleted",
+        "date": "2021-11-01",
+        "set":"1"
+      },
+      {
+        "title": "Practice 5",
+        "name": "Pro-traction",
+        "type": "Practice",
+        "description": "This is a description of the parctice.",
+        "status": "uncompleted",
+        "date": "2021-11-01",
+        "set":"1"
+      },
+      {
+        "title": "Practice 6",
+        "name": "Re-traction",
+        "type": "Practice",
+        "description": "This is a description of the parctice.",
+        "status": "uncompleted",
+        "date": "2021-11-01",
+        "set":"1"
+      },
+      {
+        "title": "Practice 7",
+        "name": "Isometric IR/ER",
+        "type": "Practice",
+        "description": "This is a description of the parctice.",
+        "status": "uncompleted",
+        "date": "2021-11-01",
+        "set":"1"
+      },
+      {
+        "title": "Practice 8",
+        "name": "Isometric Pro/ER",
+        "type": "Practice",
+        "description": "This is a description of the parctice.",
+        "status": "uncompleted",
+        "date": "2021-11-01",
+        "set":"1"
+      },
+      {
+        "title": "Practice 9",
+        "name": "Forward Elevation PROM",
+        "type": "Practice",
+        "description": "This is a description of the parctice.",
+        "status": "uncompleted",
+        "date": "2021-11-01",
+        "set":"1"
+      },
+      {
+        "title": "Practice 10",
+        "name": "Forward Elevation AA-A",
+        "type": "Practice",
+        "description": "This is a description of the parctice.",
+        "status": "uncompleted",
+        "date": "2021-11-01",
+        "set":"1"
+      },
+      {
+        "title": "Practice 11",
+        "name": "Abduction PROM",
+        "type": "Practice",
+        "description": "This is a description of the parctice.",
+        "status": "uncompleted",
+        "date": "2021-11-01",
+        "set":"1"
+      },
+      {
+        "title": "Practice 12",
+        "name": "Abduction AA-A",
+        "type": "Practice",
+        "description": "This is a description of the parctice.",
+        "status": "uncompleted",
+        "date": "2021-11-01",
+        "set":"1"
+      },
+      {
+        "title": "Practice 1",
+        "name": "Internal / External Rotation",
+        "type": "Practice",
+        "description": "Th.",
+        "status": "uncompleted",
+        "date": "2021-08-01",
+        "set":"2"
+      },      {
+        "title": "Practice 2",
+        "name": "Protraction / retraction",
+        "type": "Practice",
+        "description": "This is a description of the parctice.",
+        "status": "uncompleted",
+        "date": "2021-09-11",
+        "set":"2"
+      },
+      {
+        "title": "Practice 3",
+        "name": "Isometric",
+        "type": "Practice",
+        "description": "This is a description of the parctice.",
+        "status": "uncompleted",
+        "date": "2021-11-01",
+        "set":"2"
+      },
+      {
+        "title": "Practice 4",
+        "name": "ER AA-A",
+        "type": "Practice",
+        "description": "This is a description of the parctice.",
+        "status": "uncompleted",
+        "date": "2021-11-01",
+        "set":"2"
+      },
+      {
+        "title": "Practice 5",
+        "name": "Pro-traction",
+        "type": "Practice",
+        "description": "This is a description of the parctice.",
+        "status": "uncompleted",
+        "date": "2021-11-01",
+        "set":"2"
+      },
+      {
+        "title": "Practice 6",
+        "name": "Re-traction",
+        "type": "Practice",
+        "description": "This is a description of the parctice.",
+        "status": "uncompleted",
+        "date": "2021-11-01",
+        "set":"2"
+      },
+      {
+        "title": "Practice 7",
+        "name": "Isometric IR/ER",
+        "type": "Practice",
+        "description": "This is a description of the parctice.",
+        "status": "uncompleted",
+        "date": "2021-11-01",
+        "set":"2"
+      },
+      {
+        "title": "Practice 8",
+        "name": "Isometric Pro/ER",
+        "type": "Practice",
+        "description": "This is a description of the parctice.",
+        "status": "uncompleted",
+        "date": "2021-11-01",
+        "set":"2"
+      },
+      {
+        "title": "Practice 9",
+        "name": "Forward Elevation PROM",
+        "type": "Practice",
+        "description": "This is a description of the parctice.",
+        "status": "uncompleted",
+        "date": "2021-11-01",
+        "set":"2"
+      },
+      {
+        "title": "Practice 10",
+        "name": "Forward Elevation AA-A",
+        "type": "Practice",
+        "description": "This is a description of the parctice.",
+        "status": "uncompleted",
+        "date": "2021-11-01",
+        "set":"2"
+      },
+      {
+        "title": "Practice 11",
+        "name": "Abduction PROM",
+        "type": "Practice",
+        "description": "This is a description of the parctice.",
+        "status": "uncompleted",
+        "date": "2021-11-01",
+        "set":"2"
+      },
+      {
+        "title": "Practice 12",
+        "name": "Abduction AA-A",
+        "type": "Practice",
+        "description": "This is a description of the parctice.",
+        "status": "uncompleted",
+        "date": "2021-11-01",
+        "set":"2"
+      }
+    ]
+  }

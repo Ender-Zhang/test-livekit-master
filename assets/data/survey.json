@@ -6,7 +6,7 @@
     },
     "Question2": {
       "Question": "Next Telehealth Appt",
-      "Type": "Date",
+      "Type": "Text",
       "Answer": ""
     },
     "Question3": {

@@ -1,41 +1,139 @@
-
 /*
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @Date: 2023-03-24 11:09:38
+ * @Date: 2023-05-15 09:35:40
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @LastEditTime: 2023-03-31 13:56:22
- * @FilePath: \mobile-end\interaction\App.tsx
+ * @LastEditTime: 2023-08-02 22:51:01
+ * @FilePath: \test-livekit-master\App.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
-// In App.js in a new projectasdf
-import * as React from 'react';
-// import { Button, View, Text } from 'react-native';
+
+
 import { Button, Text, View, NativeBaseProvider, Input, VStack, HStack } from 'native-base';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-// import { StackNavigationProp } from '@react-navigation/stack';
-// import { RootStackParamList } from './types';
 import DetailsScreen from './screens/EventPage';
-import PracticeScreen from './screens/PracticePage';
-import MeetingScreen from './screens/MeetingPage';
+import PracticeScreen from './screens/DailyExercise/PracticePage';
+import MeetingScreen from './screens/VirtualVisit/MeetingPage';
 import SurveyScreen from './screens/SurveyPage';
-import ProtocolScreen from './screens/ProtocolPage';
-import ExerciseScreen from './screens/ExcercisePage';
-import ConfigScreen from './screens/Excercise_config';
-import ExcerciseScreen from './screens/ExcercisePage';
+import ProtocolScreen from './screens/DailyExercise/ProtocolPage';
+import ExerciseScreen from './screens/DailyExercise/ExcercisePage';
+import ConfigScreen from './screens/DailyExercise/Excercise_config';
+import ExcerciseScreen from './screens/DailyExercise/ExcercisePage';
 import TestScreen from './screens/Test';
-import VCSScreen from './screens/Connect_VCS';
+// import VCSScreen from './screens/Connect_VCS';
 import UCEventScreen from './screens/UCEventPage';
 import MainScreen from './screens/MainScreen';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import PracticeDetailScreen from './screens/DailyExercise/PracticeDetailPage';
+import InstructionPage from './screens/DailyExercise/InstructionPage';
+import PracticeRunningPage from './screens/DailyExercise/PracticeRunningPage';
+import LoadingPage from './screens/LoadingPage';
+import VideoMeetingPage from './screens/VirtualVisit/VideoMeeting';
+import VM_PracticeDetailScreen from './screens/VirtualVisit/VM_PracticeDetailPage';
+import VM_InstructionPage from './screens/VirtualVisit/VM_InstructionPage';
+import VM_PracticeRunningPage from './screens/VirtualVisit/VM_PracticeRunningPage';
+import VM_ConfigScreen from './screens/VirtualVisit/VM_Excercise_config';
+// import MeetingScreen from './VirtualVisit/MeetingPage';
 
-// type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Home'>;
+import { registerGlobals } from '@livekit/react-native';
+import { LogLevel, setLogLevel } from 'livekit-client';
+import { setJSExceptionHandler } from 'react-native-exception-handler';
+import Livekit from "./livekit";
+import * as React from 'react';
 
-// interface HomeScreenProps {
-//   navigation: HomeScreenNavigationProp;
+import { PreJoinPage } from './livekit/PreJoinPage';
+import { RoomPage } from './livekit/RoomPage';
+import BluetoothPage  from './screens/Bluetooth';
+
+// import {enableScreens} from 'react-native-screens'
+// enableScreens()
+
+setJSExceptionHandler((error) => {
+  console.log('error:', error, error.stack);
+}, true);
+
+setLogLevel(LogLevel.debug);
+registerGlobals();
+
+// AppRegistry.registerComponent(appName, () => App);
+// export default function App() {
+//   return (
+//     // <Livekit />
+//   );
 // }
+
 function HomeScreen({ navigation }: any) {
   const [value, onChangeText] = React.useState('');
+
+  const [userId, setUserId] = React.useState('');
+  const [password, setPassword] = React.useState('');
+
+
+  const handleLogin = () => {
+    // old version
+    // var requestOptions = {
+    //   method: 'GET',
+    //   redirect: 'follow'
+    // };
+    
+    // fetch("http://10.0.2.2:8080/api/patient-cases/" + userId, requestOptions)
+    //   .then(response => response.json())
+    //   .then((result) => { 
+    //     // console.log(result);
+    //     const pwd = result.patientCasePassword; 
+    //     if (pwd === password) {
+    //           // login successfully
+    //           navigation.navigate('LoadingPage', {
+    //             userId: userId,
+    //           });}
+
+    //     else {
+    //       alert("Wrong password or ID");
+    //     }
+    //   })
+    //   .catch(error => console.log('error', error));
+
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    
+    console.log("userId: " + userId + " password: " + password);
+    if (userId == '' || password == '' || userId == null || password == null) {
+      alert("Please enter your ID and password");
+      return;
+    }
+    var raw = JSON.stringify({
+      "username": parseInt(userId),
+      "password": password
+    });
+    
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+    
+    // fetch("http://10.0.2.2:8080/interaction/dev/api/patient-login", requestOptions)
+    fetch("http://192.168.1.102:8080/interaction/dev/api/patient-login", requestOptions)
+      .then(response => response.json())
+      .then((result) => { 
+        // console.log("result:",result);
+        // login successfully
+        navigation.navigate('LoadingPage', {
+          userId: userId,
+        });
+
+        // else {
+        //   alert("Wrong password or ID");
+        // }
+      })
+      .catch(error => {
+        console.log('error', error);
+        alert("Wrong password or ID");
+      });
+      
+  };
+
   return (
     <NativeBaseProvider>
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -46,6 +144,7 @@ function HomeScreen({ navigation }: any) {
               (e) => {
                 // console.log(e.nativeEvent.text);
                 onChangeText(e.nativeEvent.text);
+                setUserId(e.nativeEvent.text);
               }
             } />
           </HStack>
@@ -55,6 +154,7 @@ function HomeScreen({ navigation }: any) {
               (e) => {
                 // console.log(e.nativeEvent.text);
                 onChangeText(e.nativeEvent.text);
+                setPassword(e.nativeEvent.text);
               }
             } />
           </HStack>
@@ -62,26 +162,33 @@ function HomeScreen({ navigation }: any) {
 
       <Button
         onPress={() => {
-          navigation.navigate('MainScreen', {
-          // navigation.navigate('Event_list', {
+          // navigation.navigate('MainScreen', {
+          // navigation.navigate('LoadingPage', {
+            navigation.navigate('BluetoothPage', {
             userId: value
         });
+        // handleLogin();
       }}
       >Login</Button>
+
     </View>
+
     </NativeBaseProvider>
   );
 }
 
-const Stack = createNativeStackNavigator();
-// const Tab = createBottomTabNavigator();
 
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
+      <NativeBaseProvider>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="PreJoinPage" component={PreJoinPage} />
+        <Stack.Screen name="RoomPage" component={RoomPage} />
         <Stack.Screen name="Event_list" component={DetailsScreen} />
         <Stack.Screen name="Practice" component={PracticeScreen} />
         <Stack.Screen name="Meeting" component={MeetingScreen} />
@@ -91,18 +198,25 @@ export default function App() {
         <Stack.Screen name="Config" component={ConfigScreen} />
         <Stack.Screen name="ExcercisePage" component={ExcerciseScreen} />
         <Stack.Screen name="Test" component={TestScreen} />
-        <Stack.Screen name="Connect_VCS" component={VCSScreen} />
+        {/* <Stack.Screen name="Connect_VCS" component={VCSScreen} /> */}
         <Stack.Screen name="UCEventPage" component={UCEventScreen} />
         <Stack.Screen name="MainScreen" component={MainScreen} />
+        <Stack.Screen name="PracticeDetailPage" component={PracticeDetailScreen} />
 
-
+        <Stack.Screen name="LoadingPage" component={LoadingPage} />
+        <Stack.Screen name="VideoMeetingPage" component={VideoMeetingPage} ></Stack.Screen>
+        {/* <Stack.Screen name="Virtual Visit" component={MeetingScreen} ></Stack.Screen> */}
+        {/* if I uncomment below code the app will crush, dont know why */}
+        <Stack.Screen name="InstructionPage" component={InstructionPage} />
+        <Stack.Screen name="PracticeRunningPage" component={PracticeRunningPage} />
+        <Stack.Screen name="VM_PracticeDetailPage" component={VM_PracticeDetailScreen} ></Stack.Screen>
+        <Stack.Screen name="BluetoothPage" component={BluetoothPage} ></Stack.Screen>
+        {/* <Stack.Screen name="VM_InstructionPage" component={VM_InstructionPage}></Stack.Screen>
+        <Stack.Screen name="VM_PracticeRunningPage" component={VM_PracticeRunningPage}></Stack.Screen>
+        <Stack.Screen name="VM_ConfigScreen" component={VM_ConfigScreen}></Stack.Screen> */}
       </Stack.Navigator>
-      {/* tab
-      <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Settings" component={TestScreen} />
-      </Tab.Navigator> */}
+      </NativeBaseProvider>
     </NavigationContainer>
+
   );
 }
-

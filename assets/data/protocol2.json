@@ -1,0 +1,112 @@
+{
+    "Exercise": {
+        "2Sets15Reps2xDaily": {
+            "IR PROM": {
+                "Type": "Radio",
+                "Options": [
+                    "15°",
+                    "30°",
+                    "45°",
+                    "60°",
+                    "75°"
+                ]
+            },
+            "ER PROM": {
+                "Type": "Radio",
+                "Options": [
+                    "15°",
+                    "30°",
+                    "45°",
+                    "60°",
+                    "75°"
+                ]
+            },
+            "IR AA-A": {
+                "Type": "Radio",
+                "Options": [
+                    "15°",
+                    "30°",
+                    "45°",
+                    "60°",
+                    "75°"
+                ]
+            },
+            "ER A-A": {
+                "Type": "Radio",
+                "Options": [
+                    "15°",
+                    "30°",
+                    "45°",
+                    "60°",
+                    "75°"
+                ]
+            },
+            "Pro-traction": {
+                "Type": "Radio",
+                "Options": [
+                    "PROM",
+                    "AA-A",
+                    "Band"
+                ]
+            },
+            "Re-traction": {
+                "Type": "Radio",
+                "Options": [
+                    "PROM",
+                    "AA-A",
+                    "Band"
+                ]
+            },
+            "Isometric IR/ER": {
+                "Type": "Radio",
+                "Options": [
+                    "Y"
+                ]
+            },
+            "IsometricPro/Re": {
+                "Type": "Radio",
+                "Options": [
+                    "Y"
+                ]
+            },
+            "Forward ElevationPROM": {
+                "Type": "Radio",
+                "Options": [
+                    "45 °",
+                    "60 °",
+                    "75 °",
+                    "90 °",
+                    "105 °",
+                    "120 °"
+                ]
+            },
+            "Forward ElevationAA-A": {
+                "Type": "Radio",
+                "Options": [
+                    "45 °",
+                    "60 °",
+                    "75 °",
+                    "90 °",
+                    "105 °",
+                    "120 °"
+                ]
+            },
+            "Abduction PROM": {
+                "Type": "Radio",
+                "Options": [
+                    "30 °",
+                    "45 °",
+                    "60 °"
+                ]
+            },
+            "Abduction AA-A": {
+                "Type": "Radio",
+                "Options": [
+                    "30 °",
+                    "45 °",
+                    "60 °"
+                ]
+            }
+        }
+    }
+}

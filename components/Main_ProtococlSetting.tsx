@@ -2,11 +2,11 @@
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
  * @Date: 2023-03-29 18:34:41
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
- * @LastEditTime: 2023-03-31 14:25:13
+ * @LastEditTime: 2023-06-27 10:26:41
  * @FilePath: \interaction-app\interaction-app\components\Main_ProtococlSetting.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
-import { Button, Text, View } from 'react-native';
+import { Button, Text, View, Dimensions } from 'react-native';
 import React, { Component, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -14,22 +14,25 @@ import { VStack, Slider, NativeBaseProvider, Box, Stack, HStack, Input, Radio, S
 // import DateTimePicker from '@react-native-community/datetimepicker';
 
 import RGroup from './RGroup';
-import Data from '../assets/data/protocol_setting.json';
 
 
-function Portocol_Setting() {
-  
+
+function ePortocol_Setting(data:any) {
+  var Data = data.data;
+  const screenHeight = Dimensions.get('window').height;
+
   function handleFormChange(questionKey: string, text: any, setTextValue:any): void {
     // update the answer of the corresponding question in the surveyData object
     // surveyData[questionKey].Answer = text;
-    console.log(questionKey, text);
+    // console.log(questionKey, text);
     setTextValue(text);
   }
 
   return (
+    <View style={{height:screenHeight / 7}}>
     <NativeBaseProvider>
-    <ScrollView >
-      <VStack space={4} alignItems="center">
+    {/* <ScrollView > */}
+      {/* <VStack space={1} alignItems="center"> */}
       {Object.entries(Data[0]['Internal / External Rotation']).map(([questionKey, question]) => {
         const { Content, Type } = question;
 
@@ -46,7 +49,7 @@ function Portocol_Setting() {
             );
             break;
 
-          case 'Radio':
+          // case 'Radio':
             // const [option, setOption] = React.useState('');
             // console.log(question);
             // const [selected, setSelected] = useState('');
@@ -54,12 +57,12 @@ function Portocol_Setting() {
             // const handleOptionSelect = (value:any) => {
             //     setSelectedOption(value);
             //   };
-            inputComponent = (
-                <View>
-                    <RGroup content = {question.Content}/>
-                </View>
-            );
-            break;
+            // inputComponent = (
+            //     <View>
+            //         <RGroup content = {question.Content}/>
+            //     </View>
+            // );
+            // break;
 
           default:
             inputComponent = null;
@@ -68,16 +71,17 @@ function Portocol_Setting() {
 
         return (
           <Box key={questionKey}>
-            <VStack space={4} alignItems="center">
+            <VStack space={1} alignItems="center">
             <Text>{questionKey}</Text>
             {inputComponent}
             </VStack>
           </Box>
         );
       })}
-      </VStack>
-    </ScrollView>
+      {/* </VStack> */}
+    {/* </ScrollView> */}
     </NativeBaseProvider>
+    </View>
   );
 };
 

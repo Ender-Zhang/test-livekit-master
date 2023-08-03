@@ -2,45 +2,38 @@
     "title": "Meeting",
     "data": [
       {
-        "title": "Meeting 1",
+        "title": "1st Virtual Visit",
         "type": "Meeting",
-        "description": "This is a description of the meeting.",
+        "description": "",
         "status": "uncompleted",
-        "date": "2021-09-01"
+        "date": "3/30/2023"
       },
       {
-        "title": "Meeting 2",
+        "title": "2nd Virtual Visit",
         "type": "Meeting",
-        "description": "This is a description of the meeting.",
+        "description": "",
         "status": "uncompleted",
-        "date": "2021-09-05"
+        "date": "4/30/2023"
       },
       {
-        "title": "Meeting 3",
+        "title": "Device Pickup",
         "type": "Meeting",
-        "description": "This is a description of the meeting.",
+        "description": "",
         "status": "uncompleted",
-        "date": "2021-09-03"
+        "date": "5/1/2023"
       },
       {
-        "title": "Practice 1",
-        "type": "Practice",
-        "description": "This is a description of the parctice.",
+        "title": "Delivery of Service",
+        "type": "Meeting",
+        "description": "",
         "status": "uncompleted",
-        "date": "2021-08-01"
+        "date": "3/28/2023"
       },
       {
-        "title": "Practice 2",
+        "title": "Forward Elevation PROM",
         "type": "Practice",
-        "description": "This is a description of the parctice.",
-        "status": "uncompleted",
-        "date": "2021-09-11"
-      },
-      {
-        "title": "Practice 3",
-        "type": "Practice",
-        "description": "This is a description of the parctice.",
+        "description": "",
         "status": "completed",
-        "date": "2021-11-01"
+        "date": "3/30/2023"
       }]
   }
