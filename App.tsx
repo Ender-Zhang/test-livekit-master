@@ -2,7 +2,11 @@
  * @Author: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
  * @Date: 2023-05-15 09:35:40
  * @LastEditors: Ender-Zhang 102596313+Ender-Zhang@users.noreply.github.com
+<<<<<<< Updated upstream
  * @LastEditTime: 2023-08-02 22:51:01
+=======
+ * @LastEditTime: 2023-08-08 21:13:26
+>>>>>>> Stashed changes
  * @FilePath: \test-livekit-master\App.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -43,7 +47,11 @@ import * as React from 'react';
 
 import { PreJoinPage } from './livekit/PreJoinPage';
 import { RoomPage } from './livekit/RoomPage';
+<<<<<<< Updated upstream
 import BluetoothPage  from './screens/Bluetooth';
+=======
+import BleList from './screens/BlePages/BleList';
+>>>>>>> Stashed changes
 
 // import {enableScreens} from 'react-native-screens'
 // enableScreens()
@@ -112,6 +120,7 @@ function HomeScreen({ navigation }: any) {
       body: raw,
       redirect: 'follow'
     };
+<<<<<<< Updated upstream
     
     // fetch("http://10.0.2.2:8080/interaction/dev/api/patient-login", requestOptions)
     fetch("http://192.168.1.102:8080/interaction/dev/api/patient-login", requestOptions)
@@ -122,15 +131,28 @@ function HomeScreen({ navigation }: any) {
         navigation.navigate('LoadingPage', {
           userId: userId,
         });
+=======
+    navigation.navigate('LoadingPage', {
+      userId: userId,
+    });
+    // fetch("http://10.0.2.2:8080/api/patient-login", requestOptions)
+    //   .then(response => response.json())
+    //   .then((result) => { 
+    //     // console.log("result:",result);
+    //     // login successfully
+    //     navigation.navigate('LoadingPage', {
+    //       userId: userId,
+    //     });
+>>>>>>> Stashed changes
 
-        // else {
-        //   alert("Wrong password or ID");
-        // }
-      })
-      .catch(error => {
-        console.log('error', error);
-        alert("Wrong password or ID");
-      });
+    //     // else {
+    //     //   alert("Wrong password or ID");
+    //     // }
+    //   })
+    //   .catch(error => {
+    //     console.log('error', error);
+    //     alert("Wrong password or ID");
+    //   });
       
   };
 
@@ -214,6 +236,8 @@ export default function App() {
         {/* <Stack.Screen name="VM_InstructionPage" component={VM_InstructionPage}></Stack.Screen>
         <Stack.Screen name="VM_PracticeRunningPage" component={VM_PracticeRunningPage}></Stack.Screen>
         <Stack.Screen name="VM_ConfigScreen" component={VM_ConfigScreen}></Stack.Screen> */}
+
+        <Stack.Screen name="BleList" component={BleList} />
       </Stack.Navigator>
       </NativeBaseProvider>
     </NavigationContainer>
